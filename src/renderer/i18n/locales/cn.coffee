@@ -1,4 +1,6 @@
 export default {
-    message:
-        hello: "你好，世界"
+    main:
+        title: '简'
+    renderer:
+        1
 }

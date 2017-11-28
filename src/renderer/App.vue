@@ -1,17 +1,18 @@
-<template>
-  <div id="app">
-      <pre>{{ $t("message.hello")}}</pre>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    router-view
 </template>
 
 
 <script lang="coffee">
-    export default
-        name: 'jianplayer'
+export default
+    name: 'jianplayer'
+    mounted: ->
+        document.title = @$t('main.title')
 </script>
 
 
-<style>
-  /* CSS */
+<style lang="scss">
+html {
+}
 </style>

@@ -11,9 +11,13 @@ messages = {
 }
 
 
+locale = navigator.language
+if locale.indexOf('zh') == 0
+    locale = 'cn'
+
+
 Vue.use(VueI18n)
-i18n = new VueI18n({
-    locale: 'cn'
+export default new VueI18n({
+    locale,
     messages
 })
-export default i18n
