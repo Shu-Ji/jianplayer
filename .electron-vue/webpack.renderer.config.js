@@ -31,6 +31,12 @@ let rendererConfig = {
   module: {
     rules: [
       {
+        test: /\.coffee$/,
+        enforce: 'pre',
+        loader: "coffee-lint-loader",
+        exclude: /node_modules/
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
