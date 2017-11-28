@@ -11,6 +11,7 @@
   </div>
 </template>
 
+
 <script lang="coffee">
     import SystemInformation from './LandingPage/SystemInformation'
 
@@ -22,6 +23,7 @@
                 open: (link) ->
                     @$electron.shell.openExternal(link)
 </script>
+
 
 <style lang="scss">
 </style>
