@@ -20,10 +20,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  */
 let whiteListedModules = ['vue']
 
+
 let rendererConfig = {
   devtool: '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/main.js')
+    renderer: path.join(__dirname, '../src/renderer/main.coffee')
   },
   externals: [
     ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
@@ -33,8 +34,17 @@ let rendererConfig = {
       {
         test: /\.coffee$/,
         enforce: 'pre',
-        loader: "coffee-lint-loader",
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "coffee-lint-loader",
+                options: require('../.coffeelint.json')
+            }
+        ],
+      },
+      {
+        test: /\.coffee$/,
+        use: "coffee-loader",
       },
       {
         test: /\.css$/,
@@ -165,7 +175,7 @@ if (process.env.NODE_ENV === 'production') {
       'process.env.NODE_ENV': '"production"'
     }),
     new webpack.LoaderOptionsPlugin({
-      minimize: true
+        minimize: true
     })
   )
 }
