@@ -38,16 +38,17 @@ electron.app.on('ready', () => {
             electron.BrowserWindow.addDevToolsExtension(extension_path)
         }
 
-        let dirname = path.join(__dirname, '../../build/')
+        let dirname = path.resolve(path.join(__dirname, '../../build/'))
         let filename = path.join(dirname, 'vue-devtools-v3.1.6_0.tgz')
         let extension_path = path.join(dirname, 'vue_dev_tools')
 
         // already downloaded
-        if(fs.existsSync(filename)){
+        if(fs.existsSync(extension_path)){
             install(extension_path)
         } else {
             let url = 'http://ibed.u.qiniudn.com/electron/dev-tools-extentions/vue-devtools-v3.1.6_0.tgz'
             downloadFile(url, filename, function(){
+                execSync(`tar xvzf ${filename} -C ${dirname}`)
                 install(extension_path)
             })
         }

@@ -22,8 +22,10 @@ index_html = if is_dev then 'http://localhost:9080' else "file://#{__dirname}/in
 
 loadMpvPlugin = ->
     plugin_dir = path.join(path.dirname(eval("require.resolve('mpv.js')")), "build", "Release")
+    ###
     if process.platform != "linux"
         process.chdir(plugin_dir)
+    ###
 
     # To support a broader number of systems.
     app.commandLine.appendSwitch("ignore-gpu-blacklist")
