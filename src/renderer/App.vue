@@ -19,17 +19,10 @@ html, body {
 }
 
 body, #app {
-    min-height: 540px;
-    min-width: 960px;
-    box-sizing: border-box;
     cursor: default;
 }
 
 #app {
-    height: 100%;
-    width: 100%;
-
-    padding: 10px;
     //-webkit-user-select: none;
     //-webkit-app-region: drag;
 }

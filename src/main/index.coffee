@@ -3,15 +3,11 @@ import { getPluginEntry } from "mpv.js"
 path = require('path')
 
 
-###
- * Set `__static` path to static files in production
- * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
-###
-
-
 is_dev = process.env.NODE_ENV == 'development'
 is_prod = process.env.NODE_ENV == 'production'
 
+# Set `__static` path to static files in production
+# https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
 if not is_dev
     global.__static = path.join(__dirname, '/static').replace(/\\/g, '\\\\')
 
@@ -36,11 +32,13 @@ loadMpvPlugin()
 
 
 createWindow = ->
+    w = 800
+    h = 450
     main_window = new BrowserWindow({
-        height: 540
-        width: 960
-        minWidth: 960
-        minHeight: 540
+        width: w
+        height: h
+        minWidth: w
+        minHeight: h
         frame: is_dev
         show: false
         webPreferences:
