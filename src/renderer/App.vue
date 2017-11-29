@@ -19,7 +19,6 @@ html, body {
 }
 
 body, #app {
-    height: 100%;
     min-height: 540px;
     min-width: 960px;
     box-sizing: border-box;
@@ -27,9 +26,12 @@ body, #app {
 }
 
 #app {
+    height: 100%;
+    width: 100%;
+
     padding: 10px;
-    -webkit-user-select: none;
-    -webkit-app-region: drag;
+    //-webkit-user-select: none;
+    //-webkit-app-region: drag;
 }
 
 input[type="submit"],
@@ -38,6 +40,6 @@ input[type="button"],
 input[type="text"],
 button,
 textarea {
-    -webkit-app-region: no-drag;
+    //-webkit-app-region: no-drag;
 }
 </style>

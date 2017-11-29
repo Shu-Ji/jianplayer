@@ -10,13 +10,28 @@ const BabiliWebpackPlugin = require('babili-webpack-plugin')
 
 let mainConfig = {
   entry: {
-    main: path.join(__dirname, '../src/main/index.js')
+    main: path.join(__dirname, '../src/main/index.coffee')
   },
   externals: [
     ...Object.keys(dependencies || {})
   ],
   module: {
     rules: [
+      {
+        test: /\.coffee$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: "coffee-lint-loader",
+                options: require('../.coffeelint.json')
+            }
+        ],
+      },
+      {
+        test: /\.coffee$/,
+        use: "coffee-loader",
+      },
       {
         test: /\.js$/,
         use: 'babel-loader',
