@@ -1,7 +1,7 @@
 <template lang="pug">
-.main
+#main
     Mpv(:onReady="handleMpvReady" :onPropertyChange="handlePropertyChange")
-    #mask(@click="togglePause")
+    #mask(@click="oneClick")
         button(type="button" @click="openFile") 打开
         button(type="button" @click="togglePause") 播放
         input(type="range" min="0" :max="state.duration" :value="state['time-pos']")
@@ -13,7 +13,7 @@
 
 
 <style lang="scss">
-.main {
+#main {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -24,5 +24,9 @@
     top: 0;
     width: 100%;
     height: 100%;
+    pre {
+        color: white;
+        background: rgba(0, 0, 0, .3);
+    }
 }
 </style>

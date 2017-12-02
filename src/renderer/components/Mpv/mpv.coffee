@@ -46,37 +46,8 @@ export default {
                 else if type == 'ready'
                     @onReady(@)
 
-            keypress: ({key, shift_key, ctrl_key, alt_key}) ->
-                # Don't need modifier events.
-                if ["Escape", "Shift", "Control", "Alt",
-                    "Compose", "CapsLock", "Meta"
-                ].includes(key)
-                    return
-
-                if key.startsWith('Arrow')
-                    key = key.slice(5).toUpperCase()
-                    if shift_key
-                        key = "Shift+#{key}"
-
-                if ctrl_key
-                    key = "Ctrl+#{key}"
-
-                if alt_key
-                    key = "Alt+#{key}"
-
-                # Ignore exit keys for default keybindings settings.
-                if [
-                    "q", "Q", "ESC", "POWER", "STOP",
-                    "CLOSE_WIN", "CLOSE_WIN", "Ctrl+c",
-                    "AR_PLAY_HOLD", "AR_CENTER_HOLD",
-                ].includes(key)
-                    return
-
-                console.log key
+            keypress: (key) ->
                 @command('keypress', key)
-
-            fullscreen: ->
-                return
 
             destroy: ->
                 @node.remove()
