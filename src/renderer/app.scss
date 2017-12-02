@@ -1,0 +1,45 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Sour    ce Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif !important;
+    user-select: none;
+    cursor: default;
+}
+
+.show-fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    -webkit-app-region: drag;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button,
+textarea {
+    -webkit-app-region: no-drag;
+}
+
+@font-face {
+    //font-family: pmzdbtt;
+    //src: url('/static/fonts/pmzdbtt.ttf') format('truetype');
+}
+
+.flex {
+    display: flex;
+}
+.flex-1 {
+    flex: 1;
+}
+.flex-none {
+    flex: none;
+}
+.text-center {
+    text-align: center;
+}

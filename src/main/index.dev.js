@@ -12,14 +12,13 @@ let execSync = require('child_process').execSync
 let path = require('path')
 
 
-require('electron-debug')({ showDevTools: 'undocked' })
-
-// Set environment for development
-process.env.NODE_ENV = 'development'
-
 // Install `electron-debug` with `devtron`
 // Since frameless window with dev tools has some unknown bug,
 // so we make devtools show floated
+require('electron-debug')({ showDevTools: true })
+
+// Set environment for development
+process.env.NODE_ENV = 'development'
 
 
 function downloadFile(url, filename, callback){

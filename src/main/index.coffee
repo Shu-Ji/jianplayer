@@ -33,13 +33,13 @@ loadMpvPlugin()
 
 createWindow = ->
     w = 800
-    h = 450
+    h = 500
     main_window = new BrowserWindow({
         width: w
         height: h
         minWidth: w
         minHeight: h
-        frame: is_dev
+        frame: false
         show: false
         webPreferences:
             plugins: true

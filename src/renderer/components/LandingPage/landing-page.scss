@@ -1,0 +1,40 @@
+#main {
+    position: fixed;
+}
+#mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pre {
+        color: white;
+        background: rgba(0, 0, 0, .3);
+    }
+    -webkit-app-region: drag;
+}
+#mask-landing {
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    background-color: white;
+    background-image: url('https://unsplash.it/1920/1080/?random');
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-app-region: drag;
+    .logo-wrapper {
+        padding: 10px 0;
+        color: rgba(255, 255, 255, .9);
+        position: relative;
+        background: rgba(0, 0, 0, .1);
+        .logo {
+            font-size: 44px;
+        }
+        .logo-en {
+            font-size: 30px;
+        }
+    }
+}
+#player {
+    display: block;
+}

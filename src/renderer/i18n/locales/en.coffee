@@ -1,6 +1,6 @@
 export default {
     main:
-        title: 'JianPlayer'
+        title: 'Jian Player'
     renderer:
-        1
+        open: 'Open'
 }

@@ -12,27 +12,4 @@ export default
 </script>
 
 
-<style lang="scss">
-html, body {
-    padding: 0;
-    margin: 0;
-}
-
-body, #app {
-    cursor: default;
-}
-
-#app {
-    //-webkit-user-select: none;
-    //-webkit-app-region: drag;
-}
-
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="text"],
-button,
-textarea {
-    //-webkit-app-region: no-drag;
-}
-</style>
+<style lang="scss" src="./app.scss"></style>

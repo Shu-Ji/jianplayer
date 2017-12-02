@@ -9,6 +9,8 @@ export default
         name: 'landing-page'
 
         data: ->
+            is_file_loaded: false
+
             state:
                 pause: true
                 'time-pos': 0
@@ -25,10 +27,6 @@ export default
         components: { Mpv }
 
         mounted: ->
-            setTimeout =>
-                @openFile()
-            , 300
-
             document.addEventListener('keydown', @handleKeyDown, false)
 
         beforeDestroy: ->
@@ -51,6 +49,12 @@ export default
                     @toggleFullscreen()
                     @one_click.clicks = 0
 
+            openOrTogglePause: ->
+                if @is_file_loaded
+                    @togglePause()
+                else
+                    @openFile()
+
             handleKeyDown: (e) ->
                 e.preventDefault()
                 key = e.key
@@ -59,7 +63,7 @@ export default
                 # https://raw.githubusercontent.com/mpv-player/mpv/master/etc/input.conf
                 switch key
                     when ' '
-                        @togglePause()
+                        @openOrTogglePause()
                     when 'Enter'
                         @toggleFullscreen()
                     when 'ArrowLeft'
@@ -107,7 +111,7 @@ export default
                     ]
                 })
 
-                if items
+                if @is_file_loaded = Boolean(items)
                     @mpv.command('loadfile', items[0])
 
             togglePause: ->
