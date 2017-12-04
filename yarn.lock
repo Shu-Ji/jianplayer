@@ -5148,9 +5148,9 @@ mocha@^3.0.2:
     mkdirp "0.5.1"
     supports-color "3.1.2"
 
-"mpv.js@https://github.com/Shu-Ji/mpv.js.git":
+"mpv.js@https://github.com/jianplayer/mpv.js.git":
   version "0.2.2"
-  resolved "https://github.com/Shu-Ji/mpv.js.git#c71c304f37ab9fabb4636213f514cb557813abd2"
+  resolved "https://github.com/jianplayer/mpv.js.git#d14e7d351aa91ca902bc024a0209144947da08c8"
   dependencies:
     prebuild-install "^2.1.1"
     prop-types "^15.5.10"
